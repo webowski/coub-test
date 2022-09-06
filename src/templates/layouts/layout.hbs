@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#383DB7">
+	{{> head-scripts}}
+</head>
+<body class="{{bodyClass}}">
+	<div class="Wrap">
+
+		{{> header}}
+
+		<main class="Main">
+			{{> @partial-block }}
+		</main>
+
+		{{> footer}}
+
+	</div>
+
+	{{> footer-scripts}}
+</body>
+</html>

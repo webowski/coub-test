@@ -1,0 +1,111 @@
+html {
+	font-size: $rem;
+}
+
+body {
+	color: var(--major);
+	font-family: var(--fontMain);
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+	word-wrap: break-word;
+}
+
+a {
+	@include linkReset;
+	color: var(--voice);
+	text-decoration: underline;
+	text-underline-position: under;
+	transition:
+		color $duration-sm,
+		border-color $duration-sm,
+		background-color $duration-sm,
+		box-shadow $duration-sm;
+}
+
+a:is(:hover) {
+	text-decoration: none;
+}
+
+p {
+	max-width: 750px;
+	@include flowMargin;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+
+	@include mediaUp(md) {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-top: 2.2rem;
+	margin-bottom: 1rem;
+	@include flowMargin;
+	font-family: var(--fontExtra);
+	line-height: 1.2;
+	font-weight: 400;
+
+	@include mediaUp(md) {
+		margin-top: 2.2rem;
+		margin-bottom: 1rem;
+	}
+}
+
+h1, .h1 {
+	font-size: 2.25rem;
+	font-size: clamp(2.25rem, 4vw, 3.75rem);
+	line-height: 1.11;
+
+	@include mediaUp(md) {
+		line-height: 1;
+	}
+}
+
+h2, .h2 {
+	margin-top: 33px;
+	margin-bottom: 32px;
+	font-size: clamp(2.25rem, 6vw, 3.75rem);
+	line-height: 1.11;
+
+	@include mediaDown(md) {
+		margin-left: 19px;
+	}
+
+	@include mediaUp(md) {
+		font-size: 3.75rem;
+		margin-top: 40px;
+		margin-bottom: 77px;
+	}
+
+	@include mediaUp(lg) {
+		margin-top: 71px;
+		margin-bottom: 71px;
+	}
+}
+
+h3, .h3 {
+	font-size: 20px;
+
+	@include mediaUp(md) {
+		font-size: 24px;
+	}
+}
+
+h4, .h4 {
+	font-size: clamp(1.5rem, 5.5vw, 2.25rem);
+
+	@include mediaUp(md) {
+		font-size: 2.25rem;
+	}
+}
+
+h5, .h5 {
+	color: var(--muted);
+	font-size: 18px;
+}
+
+h6, .h6 {
+	font-size: 16px;
+}

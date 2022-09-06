@@ -1,0 +1,8 @@
+{
+  "lang": "en",
+  "nav": [
+    { "url": "./", "title": "TEXT" },
+    { "url": "./text_text.html", "title": "TEXT_TEXT" },
+    { "url": "./text_text_text.html", "title": "TEXT_TEXT_TEXT" }
+  ]
+}

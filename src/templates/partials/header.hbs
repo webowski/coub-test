@@ -1,0 +1,39 @@
+<header class="Header">
+	<div class="Header__container">
+
+		<a href="./" class="Header__logo">
+			<img src="../../images/logo.png" alt="">
+		</a>
+
+		<a href="./" class="Header__logoText">LOGO</a>
+
+		<nav class="NavMain Header__nav">
+			<ul>
+				{{#each nav}}
+					<li class="NavMain__item{{#ifEquals url ../currentUrl }} -current{{/ifEquals}}">
+						<a href="{{url}}">{{title}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		</nav>
+
+		<button class="Burger">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+	</div>
+
+	<nav class="NavMobile">
+		<ul class="NavMobile__list">
+			{{#each nav}}
+				<li class="NavMobile__item{{#ifEquals url ../currentUrl }} -current{{/ifEquals}}">
+					<a href="{{url}}">{{title}}</a>
+				</li>
+			{{/each}}
+		</ul>
+	</nav>
+
+</header>

@@ -1,0 +1,27 @@
+.Figure {
+	--size: 60px;
+	width: var(--size);
+	height: var(--size);
+	background-color: var(--brandLight);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+	@include mediaUp(md) {
+		--size: 80px;
+	}
+}
+
+.Figure.-circle {
+	border-radius: 200px;
+}
+
+.Figure > .Icon {
+	width: 50%;
+}
+
+
+.Figure.-circle > .Icon {
+	width: 73%;
+}

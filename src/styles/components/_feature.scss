@@ -1,0 +1,88 @@
+.FeatureList {
+	@include listReset(true);
+	display: grid;
+	gap: clamp(1.25rem, 4vw, 5rem);
+  counter-reset: section;
+
+	@include mediaUp(md) {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 5.5rem;
+	}
+
+	@include mediaUp(lg) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@include mediaUp(xl) {
+		gap: clamp(1.25rem, 6vw, 5rem);
+	}
+}
+
+.Feature {
+	position: relative;
+	font-size: .875rem;
+	line-height: 1.28;
+	isolation: isolate;
+
+	@include mediaDown(md) {
+		display: flex;
+		align-items: center;
+	}
+
+	@include mediaUp(md) {
+		min-height: 224px;
+	}
+}
+
+.Feature .Figure {
+	@include mediaDown(md) {
+		margin-right: 20px;
+	}
+
+	@include mediaUp(md) {
+		margin-bottom: 65px;
+	}
+
+	@include mediaUp(lg) {
+		margin-bottom: 31px;
+	}
+}
+
+.Feature__text {
+	max-width: 48ch;
+	word-break: break-word;
+	color: var(--minor);
+
+	@include mediaDown(md) {
+		padding-right: 1.5rem;
+		margin-top: 0;
+	}
+
+	@include mediaUp(md) {
+		max-width: 52%;
+	}
+
+	@include mediaUp(lg) {
+		max-width: 23ch;
+		line-height: 1.71;
+	}
+}
+
+.Feature::before {
+	@include mediaUp(md) {
+		@include pseudoBlock(auto);
+		counter-increment: section;
+		content: counter(section);
+		left: 30%;
+		top: -.04em;
+		z-index: -1;
+		color: var(--mutedLightest);
+		font-family: var(--fontExtra);
+		font-size: 17.5rem;
+		line-height: .8;
+	}
+
+	@include mediaUp(lg) {
+		left: 50%;
+	}
+}

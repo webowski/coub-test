@@ -1,0 +1,126 @@
+.Card {
+	--padding: 24px 22px 18px;
+	padding: var(--padding);
+	background-color: var(--bgAlter);
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		"figure heading"
+		"text   text"
+		"link   link"
+	;
+	gap: 18px;
+
+	@include mediaUp(sm) {
+		gap: 22px;
+	}
+
+	@include mediaUp(md) {
+		--padding: 77px 62px 55px 52px;
+		grid-template-areas:
+			"heading figure"
+			"text    figure"
+			"link    figure"
+		;
+		gap: 1.5rem;
+		column-gap: 2.5rem;
+	}
+
+	@include mediaUp(lg) {
+		--padding: 47px 52px 55px;
+		grid-template-areas:
+			"figure heading"
+			"text   text"
+			"link   ."
+		;
+		column-gap: 3.875rem;
+	}
+}
+
+.Card__link {
+	@include linkReset;
+	width: fit-content;
+	grid-area: link;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	color: var(--major);
+	font-size: 1rem;
+	font-family: var(--fontExtra);
+
+	@include mediaUp(sm) {
+		font-size: 1.25rem;
+	}
+
+	@include mediaUp(md) {
+		margin-top: 1.5rem;
+	}
+
+	@include mediaUp(lg) {
+		margin-top: 0;
+	}
+}
+
+.Card__link:hover {
+	color: var(--brand);
+}
+
+.Card__heading {
+	margin-bottom: 0;
+	grid-area: heading;
+	align-self: center;
+	line-height: 1;
+}
+
+.Card__text {
+	margin-top: 0;
+	margin-bottom: 0;
+	grid-area: text;
+	word-break: break-word;
+	display: block;
+
+	@include mediaDown(md) {
+		padding-bottom: 24px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	@include mediaUp(md) {
+	}
+
+	@include mediaUp(lg) {
+	}
+}
+
+.Figure.Card__figure {
+	--size: 50px;
+	grid-area: figure;
+	border-radius: 200px;
+
+	@include mediaUp(sm) {
+		--size: 75px;
+	}
+
+	@include mediaUp(md) {
+		--size: 200px;
+	}
+
+	@include mediaUp(lg) {
+		--size: 100px;
+	}
+}
+
+.CardSet {
+	display: grid;
+	gap: clamp(1.25rem, 4vw, 5rem);
+
+	@include mediaUp(md) {
+	}
+
+	@include mediaUp(lg) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@include mediaUp(xl) {
+		gap: clamp(1.25rem, 6vw, 5rem);
+	}
+}

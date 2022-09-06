@@ -1,0 +1,14 @@
+.Section {
+	padding-top: 2rem;
+	padding-bottom: 2.625rem;
+
+	@include mediaUp(md) {
+		padding-top: 4.25rem;
+		padding-bottom: 2.875rem;
+	}
+
+	@include mediaUp(lg) {
+		padding-top: 5.125rem;
+		padding-bottom: 6.625rem;
+	}
+}

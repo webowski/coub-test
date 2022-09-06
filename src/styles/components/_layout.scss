@@ -1,0 +1,21 @@
+body {
+	background-color: var(--bg);
+}
+
+.Wrap {
+	position: relative;
+	min-height: 100vh;
+	padding-top: var(--headerHeight);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	@include mediaUp(md) {
+		padding-top: 0;
+	}
+}
+
+.G-frontpage .Wrap {
+	padding-top: 0;
+}

@@ -1,0 +1,68 @@
+.Header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	background-color: var(--bg);
+	cursor: default;
+
+	@include mediaUp(md) {
+		position: relative;
+		--additionalPadding: clamp(0rem, 1.42vw, 1.25rem);
+		padding-left: var(--additionalPadding);
+		padding-right: var(--additionalPadding);
+	}
+
+	@include mediaUp(lg) {
+		background-color: transparent;
+	}
+}
+
+.Header__container {
+	@include container;
+	height: var(--headerHeight);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include mediaUp(md) {
+		justify-content: flex-start;
+	}
+}
+
+.Header__logo {
+	@include linkReset;
+	display: flex;
+	align-items: center;
+	margin-top: -2px;
+	flex-shrink: 0;
+	color: var(--brand);
+}
+
+.Header__logo img {
+	width: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.Header__logoText {
+	margin-bottom: .15em;
+	text-decoration: none;
+	display: block;
+	font-size: clamp(1.875rem, 5vw, 3.75rem);
+	line-height: .8;
+	font-family: var(--fontExtra);
+}
+
+.Header__nav {
+	margin-left: auto;
+}
+
+.G-frontpage .Header {
+	@include mediaUp(md) {
+		position: absolute;
+	}
+
+	@include mediaUp(lg) {
+		position: absolute;
+	}
+}

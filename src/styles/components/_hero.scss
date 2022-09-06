@@ -1,0 +1,110 @@
+.Hero {
+	padding-top: var(--headerHeight);
+	position: relative;
+	z-index: 5;
+	background-color: var(--bg);
+	background-image: linear-gradient(
+		to top,
+		var(--bg) 36.99%,
+		var(--brand) 37%,
+		var(--brand) 100%
+	);
+
+	@include mediaUp(md) {
+		background-image: none;
+	}
+
+	@include mediaUp(lg) {
+		// --heroHeight: calc(34vw + 200px);
+		// height: var(--heroHeight);
+		height: 694px;
+		background-image: linear-gradient(
+			to right,
+			var(--bg) 49.99%,
+			var(--brand) 50%,
+			var(--brand) 100%
+		);
+	}
+}
+
+.Hero__container {
+	@include container;
+	max-width: 1060px;
+	position: relative;
+	padding-top: 42px;
+	z-index: 3;
+	display: grid;
+	justify-content: stretch;
+	align-items: center;
+	grid-template-areas:
+		"text"
+		"image"
+		"button"
+	;
+
+	@include mediaUp(md) {
+		padding-left: calc(var(--sidePadding) + 55px);
+		padding-right: calc(var(--sidePadding) + 55px);
+		justify-content: stretch;
+		align-items: flex-start;
+		grid-template-areas:
+			"text"
+			"button"
+			"image"
+		;
+	}
+
+	@include mediaUp(lg) {
+		padding-left: calc(var(--sidePadding) + 80px);
+		padding-right: calc(var(--sidePadding) + 80px);
+		padding-bottom: 42px;
+		justify-content: flex-start;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			"text   image"
+			"button image"
+		;
+		gap: 35px;
+	}
+}
+
+.Hero__text {
+	margin-bottom: 55px;
+	grid-area: text;
+	color: var(--inverse);
+	text-align: center;
+
+	@include mediaUp(md) {
+		color: var(--major);
+		text-align: left;
+	}
+
+	@include mediaUp(lg) {
+		margin-bottom: 5rem;
+		padding-top: 1.75rem;
+	}
+}
+
+.Hero__button {
+	grid-area: button;
+
+	@include mediaDown(md) {
+		margin-top: 30px;
+		width: 100%;
+	}
+}
+
+.Hero__image {
+	grid-area: image;
+	width: clamp(250px, 78vw, 512px);
+	justify-self: center;
+
+	@include mediaUp(md) {
+		justify-self: flex-end;
+		margin-top: -55px;
+	}
+
+	@include mediaUp(lg) {
+		margin-top: 0;
+	}
+}

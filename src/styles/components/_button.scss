@@ -1,0 +1,57 @@
+.Button {
+	width: fit-content;
+	max-width: 100%;
+	padding: 12px 36px;
+	display: inline-flex;
+	justify-content: center;
+	border: none;
+	appearance: none;
+	background-position: 50%;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	background-image: none;
+	background-color: var(--brand);
+	color: var(--inverse);
+	font-family: var(--fontExtra);
+	font-size: .875rem;
+	line-height: 1.14;
+	font-weight: 400;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	transition:
+		background-color $duration,
+		border-color $duration,
+		color $duration,
+		box-shadow $duration,
+		transform $duration-sm;
+
+	@include mediaUp(sm) {
+		padding: 15px 62px;
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	@include mediaUp(md) {
+		font-size: 1.25rem;
+	}
+}
+
+.Button:hover {
+	background-color: darken($brand, 7);
+}
+
+.Button:active {
+
+	@include mediaUp(md) {
+		box-shadow: none !important;
+		transform: none;
+		transform: translateY(1px);
+	}
+}
+
+.Button:focus {
+	outline: none;
+	box-shadow:
+		0 0 0 4px rgba($brand, .3);
+}

@@ -1,0 +1,27 @@
+.Footer {
+	margin-top: auto;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	background-color: var(--bgAlter);
+
+	@include mediaUp(md) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+}
+
+.Footer__container {
+	@include container;
+}
+
+.Footer__logoText {
+	font-size: clamp(1.875rem, 5vw, 3.75rem);
+	line-height: 1;
+	font-family: var(--fontExtra);
+	text-align: center;
+
+	@include mediaUp(md) {
+		text-align: left;
+	}
+}
+
